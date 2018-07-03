@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Lista kontaktów</title>
+  <script src="https://unpkg.com/react/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone/babel.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div id="app"></div>
+
+  <!--<header class="header">
+      <nav class="nav">
+          <a href="#" class="nav__a">
+            <img class="nav__img" src="https://typeofweb.com/wp-content/uploads/2017/08/cropped-typeofweb_logo-04-white-smaller-1-e1504359870362.png" />
+              Lista kontaków
+          </a>
+          <div class="nav__button">
+              <button type="submit" class="nav__button--btn">Dodaj</button>
+          </div>
+      </nav>
+  </header>
+
+  <main class="main">
+      <ul class="main__list">
+          <li class="main__list--li">
+            <div class="flex"><img src="https://api.adorable.io/avatars/55/typeofweb1.png"/></div>
+              <div>
+                  <h2>Lena</h2>
+                  <p>JavaScript Developer</p>
+              </div>
+          </li>
+          <li class="main__list--li">
+            <div class="flex"><img src="https://api.adorable.io/avatars/55/typeofweb2.png"/></div>
+            <div>
+                <h2>Brian</h2>
+                <p>Human Resources</p>
+            </div>
+          </li>
+          <li class="main__list--li">
+            <div class="flex"><img src="https://api.adorable.io/avatars/55/typeofweb3.png"/></div>
+            <div>
+                <h2>Rick</h2>
+                <p>QA</p>
+            </div>
+          </li>
+      </ul>
+  </main>-->
+  
+
+
+
+  <script type="text/babel">
+
+function AppHeader() {
+    return (
+        <header className="header">
+            <nav className="nav">
+                <a href="#" className="nav__a">
+                    <img className="nav__img" src="https://typeofweb.com/wp-content/uploads/2017/08/cropped-typeofweb_logo-04-white-smaller-1-e1504359870362.png" />
+                    Lista kontaków
+                </a>
+                <div className="nav__button">
+                    <button type="submit" className="nav__button--btn">Dodaj</button>
+                </div>
+            </nav>
+        </header>
+    );
+}
+
+
+function ContactList() {
+    return(
+    <ul className="main__list">
+          <ContactItem
+          login="typeofweb1"
+          name="Lena"
+          department="JavaScript Developer"
+          />
+          <ContactItem
+          login="typeofweb2"
+          name="Brian"
+          department="Human Resources"
+          />
+          <ContactItem
+          login="typeofweb3"
+          name="Rick"
+          department="QA"
+          />
+      </ul>
+);
+}
+
+function ContactItem({ login, name, department }) {
+
+return (
+    <li className="main__list--li">
+        <UserAvatar />
+        <div>
+            <h2>{name}</h2>
+            <p>{department}</p>
+        </div>
+    </li>
+);
+}
+
+function UserAvatar({ login }) {
+    let imgUrl = `https://api.adorable.io/avatars/55/${login}.png`;
+    
+    return (
+        <div className="flex"><img src={imgUrl}/></div>
+    )
+}
+
+function App() {
+    return (
+        <div>
+            <AppHeader />
+            <main className="main">
+                <ContactList />
+            </main>
+        </div>
+    );
+}
+
+ReactDOM.render(<App />,
+document.getElementById("app"));
+
+
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>

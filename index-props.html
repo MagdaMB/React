@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Propsy</title>
+  <script src="https://unpkg.com/react/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone/babel.js"></script>
+</head>
+
+<body>
+  <div id="app"></div>
+  
+
+
+
+  <script type="text/babel">
+
+  function MojKomponent({title="Modal", content="hello"}) {
+  return (
+    <div>
+    <dialog open>
+      <h1>{title}</h1>
+      <p>{content}</p>
+      <footer><a href="https://typeofweb.com/">Tak!</a></footer>
+    </dialog>
+    </div>
+  );
+}
+
+ReactDOM.render(
+    <div>
+    <MojKomponent 
+    title='["meg", "meg@gm.com"]'
+    content = "To nie jest aż tak proste"
+    />
+    </div>,
+  document.getElementById('app')
+);
+
+
+
+
+  </script>
+</body>
+
+</html>
