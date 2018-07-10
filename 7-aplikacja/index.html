@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Pierwsza Apka - cz. 7</title>
+  <script src="https://unpkg.com/react/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone/babel.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <script type="text/babel">
+
+        function sayHello() {
+            alert("Hello world!");
+        }
+
+        class MyApp extends React.Component {
+            render() {
+            return (
+                <button onClick= {sayHello} type="button">Click me!</button>
+            );
+            }
+        }
+
+
+        ReactDOM.render(<MyApp />, 
+        document.getElementById("app"));
+
+    </script>
+</body>
+
+</html>
