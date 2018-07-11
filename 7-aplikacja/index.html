@@ -11,18 +11,48 @@
 </head>
 
 <body>
-    <div id="app"></div>
+    <div id="app">
+        
+    </div>
 
     <script type="text/babel">
 
-        function sayHello() {
-            alert("Hello world!");
+        class InputField extends React.Component {
+            render() {
+                return(
+                    <div>
+                        <label htmlFor="name">Write something: </label>
+                        <input id="text" type="text" name="name" placeholder="write sth here..." />
+                    </div>
+                );
+            }
+        }
+                
+        class ListUl extends React.Component {
+            render() {
+                return(
+                    <ol id="myList"></ol>
+                );
+            }
+        }
+
+        function createListElement() {
+            let listEl = document.createElement("LI");
+            let textInput = document.getElementById("text").value;
+            let textListEl = document.createTextNode(textInput);
+            
+            listEl.appendChild(textListEl);
+            document.getElementById("myList").appendChild(listEl);
         }
 
         class MyApp extends React.Component {
             render() {
             return (
-                <button onClick= {sayHello} type="button">Click me!</button>
+                <div>
+                    <InputField />
+                    <button onClick= {createListElement} type="button">Click me!</button>
+                    <ListUl />
+                </div>
             );
             }
         }
