@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Liczniki - cz. 8</title>
+  <script src="https://unpkg.com/react/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone/babel.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div id="app">
+        
+    </div>
+
+    <script type="text/babel">
+
+        class MyApp extends React.Component {
+            constructor() {
+                super();
+                this.state = {counter: 0, sumCount: 0, doubleCount: 0};
+            }
+
+            render() {
+                return(
+                    <div className="box">
+                        <button type="button" onClick={this.increment.bind(this)}>+</button>
+                        <output onDoubleClick={this.doubleClick.bind(this)}>{this.state.counter}</output>
+                        <button type="button" onClick={this.decrement.bind(this)}>-</button>
+                        
+                        <output>{this.state.sumCount}</output>
+                        <output>{this.state.doubleCount}</output>
+                    </div>     
+                );
+            }
+
+        increment() {
+            this.setState({
+                counter: this.state.counter + 1,
+                sumCount: this.state.sumCount + 1
+            })
+        }
+
+        decrement() {
+            this.setState({
+                counter: this.state.counter -1,
+                sumCount: this.state.sumCount + 1
+            })
+        }
+
+        doubleClick() {
+            this.setState({
+                doubleCount: this.state.doubleCount + 1
+            })
+        }
+
+        }
+
+        
+
+        ReactDOM.render(<MyApp />, 
+        document.getElementById("app"));
+
+    </script>
+</body>
+
+</html>
